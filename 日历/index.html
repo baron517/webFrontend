@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+
+        .calendar-col {
+            width: 100%;
+            max-width: 600px;
+            margin: 10px auto;
+            background-color: #CCC;
+        }
+        .calendar-col .clndr-controls {
+            color: white;
+            text-align: center;
+            background-color: #414141;
+            border: 1px solid #6A6A6A;
+            /* 日历标题样式 */
+        }
+        .calendar-col .clndr-controls .clndr-previous-button {
+            float: left;
+            text-align: left;
+            margin-left: 50px;
+        }
+        .calendar-col .clndr-controls .clndr-next-button {
+            float: right;
+            text-align: right;
+            margin-right: 50px;
+        }
+        .calendar-col .clndr-controls .clndr-previous-button,
+        .calendar-col .clndr-controls .clndr-next-button {
+            width: 30px;
+            cursor: pointer;
+        }
+        .calendar-col .clndr-controls .clndr-previous-button:hover,
+        .calendar-col .clndr-controls .clndr-next-button:hover {
+            opacity: 0.5;
+        }
+        .calendar-col .clndr-grid {
+            width: 100%;
+        }
+        .calendar-col .clndr-grid .days-of-the-week {
+            width: 100%;
+            background-color: #0D70A6;
+        }
+        .calendar-col .clndr-grid .days-of-the-week .header-day {
+            width: 14.28%;
+            padding: 0px;
+            margin:0px;
+            text-align: center;
+            color: white;
+            display: inline-block;    /* 日期头样式 */
+        }
+        .calendar-col .clndr-grid .days {
+            width: 100%;
+        }
+        .calendar-col .clndr-grid .days .day,
+        .calendar-col .clndr-grid .days .empty {
+            width: 14.28%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: #000;
+            background-color: #CCC;
+            display: inline-block;
+            /* 日期样式 */
+        }
+        .calendar-col .clndr-grid .days .day.event .day-number,
+        .calendar-col .clndr-grid .days .empty.event .day-number {
+            padding-bottom: 4px;
+            border-bottom: 2px solid #3883a3;
+        }
+        .calendar-col .clndr-grid .days .day.adjacent-month .day-number,
+        .calendar-col .clndr-grid .days .empty.adjacent-month .day-number {
+            opacity: 0.3;
+        }
+        .calendar-col .clndr-grid .days .today {
+            background-color: #AAA;
+        }
+        .calendar-col .clndr-grid .days .past:hover{
+            background-color: #999;
+        }
+        .calendar-col .clndr-grid .days .today:hover{
+            background-color: #999;
+        }
+        .focusIn{
+            background-color:#0D70A6 !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+        <div class="calendar-col">
+
+        </div>
+
+
+
+        <script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.js"></script>
+        <script src="underscore-min.js"></script>
+        <script src="moment.min.js"></script>
+        <script src="clndr.js"></script>
+        <script>
+
+            $(".calendar-col").clndr({
+
+                clickEvents: {
+                    nextMonth: function () {
+                        console.log('Cal-1 next month');
+                    },
+                    previousMonth: function () {
+                        console.log('Cal-1 previous month');
+                    },
+                    click: function(target){
+                        console.log(target);
+                    },
+                },
+                daysOfTheWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+                forceSixRows : true,
+                adjacentDaysChangeMonth : true,
+            });
+
+        </script>
+
+</body>
+</html>
