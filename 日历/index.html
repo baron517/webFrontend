@@ -96,6 +96,22 @@
 
         <div class="calendar-col">
 
+            <script type="text/template" id="id_clndr_template">
+                <div class="clndr-controls">
+                    <div class="clndr-previous-button"><<</div>
+                    <div class="clndr-next-button">>></div>
+                    <div class="month"><%= month %> <%= year %></div>
+                </div>
+                <div class="clndr-grid">
+                    <div class="days-of-the-week">
+                        <% _.each(daysOfTheWeek, function(day) { %><div class="header-day"><%= day %></div><% }); %>
+                    </div>
+                    <div class="days">
+                        <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><span class="day-number"><%= day.day %></span></div><% }); %>
+                    </div>
+                </div>
+            </script>
+
         </div>
 
 
@@ -104,11 +120,19 @@
         <script src="underscore-min.js"></script>
         <script src="moment.min.js"></script>
         <script src="clndr.js"></script>
+
+
+
         <script>
 
 
-            $(".calendar-col").clndr({
 
+
+
+
+
+            $(".calendar-col").clndr({
+                template: $('#id_clndr_template').html(),
                 clickEvents: {
                     nextMonth: function () {
                         console.log('Cal-1 next month');
