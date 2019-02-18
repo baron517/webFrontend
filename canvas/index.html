@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+</head>
+<body>
+
+
+    <canvas id="cvs" style="width:1920px;height:1080px;"></canvas>
+
+ 
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="preloadjs.min.js"></script>
+</body>
+</html>
+
+ <script>
+
+  //存放图片路径的数组
+    // var imgSrcArr = [
+        
+    // ];
+    // for(var j=1;j<=1500;j++)
+    // {
+    //     imgSrcArr.push("圆序列/1 ("+j+").png");
+    // }
+
+    // var imgWrap;
+
+    // var i=0;
+
+    // function preloadImg(arr) {
+        
+        
+    //         imgWrap = new Image();
+    //         imgWrap.src = arr;
+    //         imgWrap.onload=function()
+    //         {
+    //             i++;
+    //             if(i<1500)
+    //             {
+    //                 preloadImg(imgSrcArr[i]);
+    //             }
+               
+    //         }
+    //         imgWrap.onerror=function()
+    //         {
+    //             i++;
+    //             if(i<1500)
+    //             {
+    //                 preloadImg(imgSrcArr[i]);
+    //             }
+    //         }
+        
+    // }
+
+    
+    // setTimeout(function()
+    // {
+    //     preloadImg(imgSrcArr[i]);
+            
+       
+    //    var cvs = document.getElementById("cvs");
+    //         var ctx = cvs.getContext('2d');
+    //             ctx.drawImage(this, 0, 0);
+
+
+    // },10)
+   
+
+    // console.log("测试");
+
+   
+
+// 图片路径
+var imgsrc=[];
+for(var i=1;i<=14;i++)
+{
+    imgsrc.push({id:"p"+i,src:"圆序列/1 ("+i+").png"});
+}
+// 图片资源加载
+var load=new createjs.LoadQueue(true);
+load.loadManifest(imgsrc);
+load.on('complete',hand);
+//图片加载完后执行的方法
+function hand(){
+
+}
+
+</script>
